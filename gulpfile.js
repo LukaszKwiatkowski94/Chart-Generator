@@ -11,7 +11,8 @@ const browserSync = require("browser-sync").create();
 const reload = browserSync.reload;
 
 paths = {
-	sass: "./src/sass/**/*.scss",
+	sass: "./src/sass/*.scss",
+	sassObserv: "./src/sass/**/*.scss",
 	sassDest: "./dist/css",
 	js: "./src/js/**/*.js",
 	jsDest: "./dist/js",
@@ -59,7 +60,7 @@ function startBrowserSync(done) {
 
 function watchForChanges(done) {
 	watch("./*.html").on("change", reload);
-	watch([paths.sass, paths.js], parallel(sassCompiler, javaScript)).on(
+	watch([paths.sassObserv, paths.js], parallel(sassCompiler, javaScript)).on(
 		"change",
 		reload
 	);

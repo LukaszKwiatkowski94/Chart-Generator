@@ -1,0 +1,15 @@
+$grey: rgb(224, 222, 202);
+$creamy: rgb(252, 249, 198);
+$light-green: rgb(199, 211, 111);
+$green: rgb(158, 178, 59);
+
+$green-gradient-solid: linear-gradient(
+	0deg,
+	rgba(158, 178, 59, 0.6) 10%,
+	rgba(158, 178, 59, 0.85) 100%
+);
+$light-green-gradient-solid: linear-gradient(
+	90deg,
+	rgba(199, 211, 111, 0.8) 50%,
+	rgba(199, 211, 111, 0.8) 50%
+);

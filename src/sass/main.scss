@@ -1,1 +1,2 @@
-@forward './devices/index.scss';
+@use "./utilities/reset" as *;
+@forward "./devices/index.scss";
