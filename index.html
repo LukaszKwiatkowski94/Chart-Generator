@@ -1,12 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chart Generator</title>
-</head>
-<body>
-    
-</body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Chart Generator</title>
+        <link rel="shortcut icon" href="#">
+		<link rel="stylesheet" href="./dist/css/main.min.css" />
+	</head>
+	<body>
+		<header class="header">
+			<h1 class="header__title">Chart Generator</h1>
+		</header>
+		<main class="main">
+			<div class="wrapper">
+				<div class="chart">
+					<div class="chart__btn">
+						<div class="chart__demo-btn"><p>demo</p></div>
+						<div class="chart__create-btn"><p>create</p></div>
+					</div>
+					<div class="chart__demo-box">
+						<section class="section demo">
+							<h2 class="section-header">demo</h2>
+							<canvas id="demoChart"></canvas>
+						</section>
+					</div>
+					<div class="chart__create-box">
+						<section class="section create">
+							<h2 class="section-header create">create</h2>
+							<canvas id="createChart"></canvas>
+						</section>
+					</div>
+				</div>
+			</div>
+		</main>
+		<footer class="footer">
+			<div class="wrapper">
+				<p class="footer__used-elements">
+					<h2 class="footer__title">used libraries</h2>
+					<ol class="footer__used-item">
+						<li>Chart JS</li>
+						<li></li>
+						<li></li>
+					</ol>
+				</p>
+				<p class="footer__information">&copy; <span class="footer__year"></span> Simple Chart Generator</p>
+			</div>
+		</footer>
+		<script
+			src="https://code.jquery.com/jquery-3.6.0.js"
+			integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+			crossorigin="anonymous"
+		></script>
+		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+		<script src="./dist/js/main.min.js"></script>
+	</body>
 </html>
