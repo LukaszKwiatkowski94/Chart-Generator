@@ -19,16 +19,42 @@
 						<div class="chart__demo-btn"><p>demo</p></div>
 						<div class="chart__create-btn"><p>create</p></div>
 					</div>
-					<div class="chart__demo-box">
+					<div class="chart__demo-box chart__box">
 						<section class="section demo">
 							<h2 class="section-header">demo</h2>
-							<canvas id="demoChart"></canvas>
+							<canvas class="chart__single-chart" id="demoChart"></canvas>
+							<table class="chart__demo-table">
+								<tr class="chart__demo-labels">
+									<td>Red</td>
+									<td>Blue</td>
+									<td>Yellow</td>
+									<td>Green</td>
+									<td>Purple</td>
+									<td>Orange</td>
+								</tr>
+								<tr class="chart__demo-colors">
+									<td data-color="rgba(255, 99, 132, 1)">Red</td>
+									<td data-color="rgba(54, 162, 235, 1)">Blue</td>
+									<td data-color="rgba(255, 206, 86, 1)">Yellow</td>
+									<td data-color="rgba(75, 192, 192, 1)">Green</td>
+									<td data-color="rgba(153, 102, 255, 1)">Purple</td>
+									<td data-color="rgba(255, 159, 64, 1)">Orange</td>
+								</tr>
+								<tr class="chart__demo-values">
+									<td>12</td>
+									<td>19</td>
+									<td>3</td>
+									<td>5</td>
+									<td>2</td>
+									<td>3</td>
+								</tr>
+							</table>
 						</section>
 					</div>
-					<div class="chart__create-box">
+					<div class="chart__create-box chart__box">
 						<section class="section create">
 							<h2 class="section-header create">create</h2>
-							<canvas id="createChart"></canvas>
+							<canvas class="chart__single-chart" id="createChart"></canvas>
 						</section>
 					</div>
 				</div>
@@ -54,5 +80,6 @@
 		></script>
 		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 		<script src="./dist/js/main.min.js"></script>
+		<script src="./dist/js/demo.min.js"></script>
 	</body>
 </html>
