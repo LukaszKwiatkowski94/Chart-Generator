@@ -5,24 +5,26 @@ const ctxCreate = $("#createChart");
 let myChartCreate = new Chart(ctxCreate, {});
 
 $(".btn-add").click(() => {
-	$(".chart__create-table")
-		.append(
-			$("<input></input>")
-				.addClass("chart__create-label")
-				.attr({ type: "text" })
-		)
-		.append(
-			$("<input></input>")
-				.addClass("chart__create-color")
-				.attr({ type: "color" })
-		)
-		.append(
-			$("<input></input>")
-				.addClass("chart__create-value")
-				.attr({ type: "number" })
-				.attr({ value: 0 })
-		);
-	// .chart__create-label
+	$(".chart__create-table").append(
+		$("<div></div>")
+			.addClass("chart__create-table-item")
+			.append(
+				$("<input></input>")
+					.addClass("chart__create-label")
+					.attr({ type: "text" })
+			)
+			.append(
+				$("<input></input>")
+					.addClass("chart__create-color")
+					.attr({ type: "color" })
+			)
+			.append(
+				$("<input></input>")
+					.addClass("chart__create-value")
+					.attr({ type: "number" })
+					.attr({ value: 0 })
+			)
+	);
 	$("input").on("change keyup paste", () => {
 		myChartCreate.destroy();
 		labels = [];
