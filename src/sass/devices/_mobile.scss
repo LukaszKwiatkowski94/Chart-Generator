@@ -88,3 +88,12 @@ body {
 		padding: 0.2em 0.5em;
 	}
 }
+
+.btn-add {
+	margin: 1em auto;
+	padding: .5em 1em;
+	background-color: $green;
+	border-radius: 1em;
+	font-size: 2.5rem;
+	text-transform: uppercase;
+}

@@ -1,3 +1,4 @@
+let countOfElements = 0;
 let labels = [];
 let colors = [];
 let values = [];
@@ -24,50 +25,68 @@ $(".btn-add").click(() => {
 					.attr({ type: "number" })
 					.attr({ value: 0 })
 			)
+			.append(
+				$("<button></button>")
+					.addClass("chart__create-remove")
+					.text("Remove")
+					.click((e) => {
+						countOfElements--;
+						$(e.target).parent().remove();
+						reloadChart();
+					})
+			)
 	);
 	$("input").on("change keyup paste", () => {
-		myChartCreate.destroy();
-		labels = [];
-		colors = [];
-		values = [];
-		$(".chart__create-label")
-			.toArray()
-			.map((item) => {
-				labels.push(item.value);
-			});
+		reloadChart();
+	});
+	countOfElements++;
+	if (countOfElements == 10) {
+		$(".btn-add").attr("disabled", true);
+	}
+});
 
-		$(".chart__create-color")
-			.toArray()
-			.map((item) => {
-				colors.push(item.value);
-			});
+const reloadChart = () => {
+	myChartCreate.destroy();
+	labels = [];
+	colors = [];
+	values = [];
+	$(".chart__create-label")
+		.toArray()
+		.map((item) => {
+			labels.push(item.value);
+		});
 
-		$(".chart__create-value")
-			.toArray()
-			.map((item) => {
-				values.push(item.value);
-			});
-		myChartCreate = new Chart(ctxCreate, {
-			type: "bar",
-			data: {
-				labels: labels,
-				datasets: [
-					{
-						// label: '# of Votes',
-						data: values,
-						backgroundColor: colors,
-						borderColor: colors,
-						borderWidth: 1,
-					},
-				],
-			},
-			options: {
-				scales: {
-					y: {
-						beginAtZero: true,
-					},
+	$(".chart__create-color")
+		.toArray()
+		.map((item) => {
+			colors.push(item.value);
+		});
+
+	$(".chart__create-value")
+		.toArray()
+		.map((item) => {
+			values.push(item.value);
+		});
+	myChartCreate = new Chart(ctxCreate, {
+		type: "bar",
+		data: {
+			labels: labels,
+			datasets: [
+				{
+					// label: '# of Votes',
+					data: values,
+					backgroundColor: colors,
+					borderColor: colors,
+					borderWidth: 1,
+				},
+			],
+		},
+		options: {
+			scales: {
+				y: {
+					beginAtZero: true,
 				},
 			},
-		});
+		},
 	});
-});
+};
