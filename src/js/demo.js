@@ -2,26 +2,11 @@ const ctx = $("#demoChart");
 const demoTable = $(".chart__demo-table");
 
 let data = [];
-let labels = [];
-let colors = [];
-$(".chart__demo-values")
-	.children()
-	.toArray()
-	.map((item) => {
-		data.push(item.innerHTML);
-	});
-$(".chart__demo-labels")
-	.children()
-	.toArray()
-	.map((item) => {
-		labels.push(item.innerHTML);
-	});
-$(".chart__demo-colors")
-	.children()
-	.toArray()
-	.map((item) => {
-		colors.push(item.getAttribute('data-color'))
-	});
+let labels = ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"];
+let colors = ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"];
+for (let i = 0; i < 6; i++) {
+	data.push(Math.floor(Math.random() * 5) + 1);
+}
 
 const myChart = new Chart(ctx, {
 	type: "bar",
@@ -29,7 +14,7 @@ const myChart = new Chart(ctx, {
 		labels: labels,
 		datasets: [
 			{
-				// label: '# of Votes',
+				label: labels[0],
 				data: data,
 				backgroundColor: colors,
 				borderColor: colors,
