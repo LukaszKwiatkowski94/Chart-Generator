@@ -1,5 +1,9 @@
 @media (min-width: 576px) {
 	.chart {
+		&__demo-btn,
+		&__create-btn {
+			cursor: pointer;
+		}
 		&__create-table {
 			flex-direction: row;
 			justify-content: flex-start;
@@ -21,7 +25,7 @@
 			width: 100%;
 		}
 		input {
-            margin: 0.5em auto;
+			margin: 0.5em auto;
 			min-width: 3em;
 		}
 	}
