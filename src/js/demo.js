@@ -18,7 +18,7 @@ const myChart = new Chart(ctx, {
 				label: "Colors in demo chart",
 				data: data,
 				backgroundColor: "white",
-				borderColor: colors,
+				borderColor: 'black',
 				borderWidth: 1,
 			},
 		],
