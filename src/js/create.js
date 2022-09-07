@@ -36,6 +36,24 @@ $(".btn-add").click(() => {
 						reloadChart();
 					})
 			)
+			.append(
+				$("<button></button>")
+					.addClass("chart__create-up")
+					.text("<<")
+					.click((e) => {
+						$(e.target).parent().insertBefore($(e.target).parent().prev());
+						reloadChart();
+					})
+			)
+			.append(
+				$("<button></button>")
+					.addClass("chart__create-down")
+					.text(">>")
+					.click((e) => {
+						$(e.target).parent().insertAfter($(e.target).parent().next());
+						reloadChart();
+					})
+			)
 	);
 	$("input").on("change keyup paste", () => {
 		reloadChart();
@@ -72,7 +90,7 @@ const reloadChart = () => {
 			labels: labels,
 			datasets: [
 				{
-					// label: '# of Votes',
+					// label: labels,
 					data: values,
 					backgroundColor: colors,
 					borderColor: colors,
