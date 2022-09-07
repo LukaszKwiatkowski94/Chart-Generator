@@ -6,6 +6,7 @@ const ctxCreate = $("#createChart");
 let myChartCreate = new Chart(ctxCreate, {});
 
 $(".btn-add").click(() => {
+	let randColor = Math.floor(Math.random()*16777215).toString(16)
 	$(".chart__create-table").append(
 		$("<div></div>")
 			.addClass("chart__create-table-item")
@@ -13,11 +14,13 @@ $(".btn-add").click(() => {
 				$("<input></input>")
 					.addClass("chart__create-label")
 					.attr({ type: "text" })
+					.attr({ value: 'New item' })
 			)
 			.append(
 				$("<input></input>")
 					.addClass("chart__create-color")
 					.attr({ type: "color" })
+					.attr({ value: `#${randColor}` })
 			)
 			.append(
 				$("<input></input>")
@@ -28,7 +31,7 @@ $(".btn-add").click(() => {
 			.append(
 				$("<button></button>")
 					.addClass("chart__create-remove")
-					.text("Remove")
+					.text("X")
 					.click((e) => {
 						countOfElements--;
 						$(e.target).parent().remove();
@@ -59,6 +62,7 @@ $(".btn-add").click(() => {
 		reloadChart();
 	});
 	countOfElements++;
+	reloadChart();
 	checkButton();
 });
 
