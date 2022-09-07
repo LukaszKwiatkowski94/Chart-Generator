@@ -92,6 +92,7 @@ body {
 		border-radius: 1em;
 		font-size: 1.6rem;
 		text-transform: uppercase;
+		cursor: pointer;
 	}
 	input[type="text"],
 	input[type="number"] {
@@ -106,4 +107,38 @@ body {
 	border-radius: 1em;
 	font-size: 2.5rem;
 	text-transform: uppercase;
+	cursor: pointer;
+}
+
+.footer {
+	margin-top: 2em;
+	width: 100%;
+	background-color: $grey;
+	&__items {
+		display: flex;
+		justify-content: space-evenly;
+	}
+	&__used-elements {
+		display: flex;
+		flex-direction: column;
+		margin-bottom: 1em;
+	}
+	&__information {
+		padding: 0.6em;
+		text-align: center;
+		font-size: 1.6rem;
+		border-top: 1px solid $creamy;
+	}
+	&__logo {
+		display: none;
+	}
+	&__title {
+		margin-top: 1em;
+		font-size: 1.8rem;
+		font-weight: bold;
+		text-transform: uppercase;
+	}
+	&__used-item {
+		font-size: 1.4rem;
+	}
 }

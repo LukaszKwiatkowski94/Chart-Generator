@@ -4,8 +4,8 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Chart Generator</title>
-        <link rel="shortcut icon" href="#">
+		<title>Simply Chart Generator</title>
+		<link rel="shortcut icon" href="#" />
 		<link rel="stylesheet" href="./dist/css/main.min.css" />
 	</head>
 	<body>
@@ -54,8 +54,7 @@
 					<div class="chart__create-box chart__box">
 						<section class="section create">
 							<h2 class="section-header create">create</h2>
-							<div class="chart__create-table">
-							</div>
+							<div class="chart__create-table"></div>
 							<button class="btn-add">Add</button>
 							<canvas class="chart__single-chart" id="createChart"></canvas>
 						</section>
@@ -65,15 +64,22 @@
 		</main>
 		<footer class="footer">
 			<div class="wrapper">
-				<p class="footer__used-elements">
-					<h2 class="footer__title">used libraries</h2>
-					<ol class="footer__used-item">
-						<li>Chart JS</li>
-						<li></li>
-						<li></li>
-					</ol>
+				<div class="footer__items">
+					<div class="footer__logo">
+						<p class="footer__logo-name">Simply Chart Generator</p>
+					</div>
+					<div class="footer__used-elements">
+						<h2 class="footer__title">used libraries</h2>
+						<ol class="footer__used-item">
+							<li>Chart JS</li>
+							<li>jQuery</li>
+							<li></li>
+						</ol>
+					</div>
+				</div>
+				<p class="footer__information">
+					&copy; <span class="footer__year"></span> Simple Chart Generator
 				</p>
-				<p class="footer__information">&copy; <span class="footer__year"></span> Simple Chart Generator</p>
 			</div>
 		</footer>
 		<script
