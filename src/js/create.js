@@ -32,6 +32,7 @@ $(".btn-add").click(() => {
 					.click((e) => {
 						countOfElements--;
 						$(e.target).parent().remove();
+						checkButton();
 						reloadChart();
 					})
 			)
@@ -40,9 +41,7 @@ $(".btn-add").click(() => {
 		reloadChart();
 	});
 	countOfElements++;
-	if (countOfElements == 10) {
-		$(".btn-add").attr("disabled", true);
-	}
+	checkButton();
 });
 
 const reloadChart = () => {
@@ -89,4 +88,12 @@ const reloadChart = () => {
 			},
 		},
 	});
+};
+
+const checkButton = () => {
+	if (countOfElements >= 10) {
+		$(".btn-add").attr("disabled", true);
+	} else {
+		$(".btn-add").attr("disabled", false);
+	}
 };
