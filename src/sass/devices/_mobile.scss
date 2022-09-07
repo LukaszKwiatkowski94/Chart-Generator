@@ -83,8 +83,27 @@ body {
 	&__create-value {
 		width: 30%;
 	}
+	&__create-remove,
+	&__create-up,
+	&__create-down {
+		margin: 0.2em;
+		padding: 0.5em 1em;
+		background-color: $green;
+		border-radius: 1em;
+		font-size: 1.6rem;
+		text-transform: uppercase;
+	}
 	input[type="text"],
 	input[type="number"] {
 		padding: 0.2em 0.5em;
 	}
+}
+
+.btn-add {
+	margin: 1em auto;
+	padding: 0.5em 1em;
+	background-color: $green;
+	border-radius: 1em;
+	font-size: 2.5rem;
+	text-transform: uppercase;
 }

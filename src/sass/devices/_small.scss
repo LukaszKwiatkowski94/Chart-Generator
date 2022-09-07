@@ -1,2 +1,28 @@
 @media (min-width: 576px) {
+	.chart {
+		&__create-table {
+			flex-direction: row;
+			justify-content: flex-start;
+		}
+		&__create-table-item {
+			flex-direction: column;
+			justify-content: space-evenly;
+			margin: auto;
+			p {
+				margin: 1.6rem;
+				padding-bottom: 0;
+				font-weight: bold;
+				text-transform: uppercase;
+			}
+		}
+		&__create-label,
+		&__create-color,
+		&__create-value {
+			width: 100%;
+		}
+		input {
+            margin: 0.5em auto;
+			min-width: 3em;
+		}
+	}
 }
