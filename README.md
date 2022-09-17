@@ -9,3 +9,18 @@ The application was written based on jQuery and ChartJs.
 ```
 git clone https://github.com/LukaszKwiatkowski94/Simple-Chart-Generator.git
 ```
+
+2. Go to directory
+```
+cd Simple-Chart-Generator
+```
+
+3. Install node
+```
+npm i -y
+```
+
+4. Run gulp (server will be started)
+```
+gulp
+```
