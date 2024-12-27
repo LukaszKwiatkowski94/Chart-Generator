@@ -1,5 +1,5 @@
 # Simply Chart Generator
-It is a simple chart generator. Supports two cards. The first one shows a demo version where the graph is generated from random numbers. The second tab called "Create" allows you to create a chart of up to 10 values. 
+This application allows users to create custom charts based on input data. It leverages localStorage to save data for seamless use across sessions. Additionally, the application provides functionality for sorting the data and downloading the generated chart as a PNG file.
 
 The application was written based on jQuery and ChartJs.
 
