@@ -6,26 +6,30 @@ const ctxCreate = $("#createChart");
 let myChartCreate = new Chart(ctxCreate, {});
 
 $('#create__btn').click(() => {
-    // Set values for new item
-        let randColor = Math.floor(Math.random()*16777215).toString(16);
-        let idedntifier = Math.random().toString(36).substring(7);
-
-    // Create object for item
-        let itemObject = {
-            id: idedntifier,
-            name: 'New item',
-            color: '#'+randColor,
-            value: 0
-        };
-
-    // Add item object to items array
-        items.push(itemObject);
-
-    // Prepare HTML for new item
-        prepareHTML_ListItems();
-
-    // Save items to local storage
-        saveItems();
+    try {
+        // Set values for new item
+            let randColor = Math.floor(Math.random()*16777215).toString(16);
+            let idedntifier = Math.random().toString(36).substring(7);
+    
+        // Create object for item
+            let itemObject = {
+                id: idedntifier,
+                name: 'New item',
+                color: '#'+randColor,
+                value: 0
+            };
+    
+        // Add item object to items array
+            items.push(itemObject);
+    
+        // Prepare HTML for new item
+            prepareHTML_ListItems();
+    
+        // Save items to local storage
+            saveItems();
+    } catch (error) {
+        console.error(error);
+    }
 });
 
 // Save or Update items in local storage
@@ -205,40 +209,52 @@ function prepareHTML_ListItems() {
 
 // Clear items from local storage
     function clearItems() {
-        localStorage.removeItem('items');
-        items = [];
-        list.html('');
-        // Reload chart
-            reloadChart();
-        // Show or hide elements
-            showOrHideElements();
+        try {
+            localStorage.removeItem('items');
+            items = [];
+            list.html('');
+            // Reload chart
+                reloadChart();
+            // Show or hide elements
+                showOrHideElements();
+        } catch (error) {
+            console.error(error);
+        }
     }
 
     $('#clear__btn').click(() => {
-        clearItems();
+        try {
+            clearItems();
+        } catch (error) {
+            console.error(error);
+        }
     });
 
 // Reload Chart
     function reloadChart() {
-        if(myChartCreate) {
-            myChartCreate.destroy();
-        }
-        let datasets = items.map(item => {
-            return {
-                label: item.name,
-                data: [item.value],
-                backgroundColor: item.color,
-                borderColor: item.color,
+        try {
+            if(myChartCreate) {
+                myChartCreate.destroy();
             }
-        });
-
-        myChartCreate = new Chart(ctxCreate, {
-            type: 'bar',
-            data: {
-                labels: [''],
-                datasets: datasets
-            },
-        });
+            let datasets = items.map(item => {
+                return {
+                    label: item.name,
+                    data: [item.value],
+                    backgroundColor: item.color,
+                    borderColor: item.color,
+                }
+            });
+    
+            myChartCreate = new Chart(ctxCreate, {
+                type: 'bar',
+                data: {
+                    labels: [''],
+                    datasets: datasets
+                },
+            });
+        } catch (error) {
+            console.error(error);
+        }
     }
 
     function showOrHideElements() {
@@ -264,28 +280,42 @@ function prepareHTML_ListItems() {
 
 // Sort items by value ascending
     $('#asc__btn').click(() => {
-        items.sort((a, b) => a.value - b.value);
-        saveItems();
-        prepareHTML_ListItems();
+        try {
+            items.sort((a, b) => a.value - b.value);
+            saveItems();
+            prepareHTML_ListItems();
+        } catch (error) {
+            console.error(error);
+        }
     });
 
 // Sort items by value descending
     $('#desc__btn').click(() => {
-        items.sort((a, b) => b.value - a.value);
-        saveItems();
-        prepareHTML_ListItems();
+        try {
+            items.sort((a, b) => b.value - a.value);
+            saveItems();
+            prepareHTML_ListItems();
+        } catch (error) {
+            console.error(error);
+        }
     });
 
 // Download PNG
     $('#download__btn').click(() => {
-        let canvas = document.getElementById('createChart');
-        let dataURL = canvas.toDataURL('image/png');
-        let a = document.createElement('a');
-        a.href = dataURL;
-        a.download = 'chart.png';
-        a.click();
+        try {
+            let canvas = document.getElementById('createChart');
+            let dataURL = canvas.toDataURL('image/png');
+            let a = document.createElement('a');
+            a.href = dataURL;
+            a.download = 'chart.png';
+            a.click();
+        } catch (error) {
+            console.error(error);
+        }
     });
 
 
 // Load items from local storage
-    loadItems();
+    setTimeout(() => {
+        loadItems();
+    }, 1000);
