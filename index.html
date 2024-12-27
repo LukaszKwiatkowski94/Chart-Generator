@@ -9,52 +9,28 @@
 		<link rel="stylesheet" href="./dist/css/main.min.css" />
 	</head>
 	<body>
-		<header class="header">
-			<h1 class="header__title">Chart Generator</h1>
-		</header>
-		<main class="main">
-			<div class="wrapper">
-				<div class="chart">
-					<div class="chart__btn">
-						<div class="chart__demo-btn"><p>demo</p></div>
-						<div class="chart__create-btn"><p>create</p></div>
-					</div>
-					<div class="chart__demo-box chart__box">
-						<section class="section demo">
-							<h2 class="section-header">demo</h2>
-							<canvas class="chart__single-chart" id="demoChart"></canvas>
-						</section>
-					</div>
-					<div class="chart__create-box chart__box">
-						<section class="section create">
-							<h2 class="section-header create">create</h2>
-							<div class="chart__create-table"></div>
-							<button class="btn-add">Add</button>
-							<canvas class="chart__single-chart" id="createChart"></canvas>
-						</section>
-					</div>
+		<main class="container wrapper">
+			<h1 class="title">Simply Chart Generator</h1>
+			<div class="data">
+				<h2 class="data__title">Set Data</h2>
+				<div class="data__buttons">
+					<button class="btn btn--primary btn--create" id="create__btn">Create</button>
+					<button class="btn btn--danger btn--clear" id="clear__btn">Clear</button>
+					<button class="btn btn--info btn--asc" id="asc__btn">ASC</button>
+					<button class="btn btn--info btn--desc" id="desc__btn">DESC</button>
+					<button class="btn btn--success btn--download" id="download__btn">Download PNG</button>
 				</div>
+				<div class="data__list" id="list__container"></div>
 			</div>
+			<div class="chart">
+				<canvas id="createChart"></canvas>
+			</div>
+			<p class="info">
+				<span class="info__text--bold">Info:</span> This application uses localStorage to store data. If you want to clear the data, click the "Clear" button. If you want to download the chart, click the "Download PNG" button.
+			</p>
 		</main>
 		<footer class="footer">
-			<div class="wrapper">
-				<div class="footer__items">
-					<div class="footer__logo">
-						<p class="footer__logo-name">Simply Chart Generator</p>
-					</div>
-					<div class="footer__used-elements">
-						<h2 class="footer__title">used libraries</h2>
-						<ol class="footer__used-item">
-							<li>Chart JS</li>
-							<li>jQuery</li>
-							<li></li>
-						</ol>
-					</div>
-				</div>
-				<p class="footer__information">
-					&copy; <span class="footer__year"></span> Simple Chart Generator
-				</p>
-			</div>
+			<p class="footer__year"></p>
 		</footer>
 		<script
 			src="https://code.jquery.com/jquery-3.6.0.js"
@@ -63,7 +39,6 @@
 		></script>
 		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 		<script src="./dist/js/main.min.js"></script>
-		<script src="./dist/js/demo.min.js"></script>
 		<script src="./dist/js/create.min.js"></script>
 	</body>
 </html>

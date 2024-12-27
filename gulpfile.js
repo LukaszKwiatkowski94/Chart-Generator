@@ -5,7 +5,7 @@ const autoprefixer = require("gulp-autoprefixer");
 const rename = require("gulp-rename");
 const babel = require("gulp-babel");
 const uglify = require("gulp-uglify");
-const imagemin = require("gulp-imagemin");
+// const imagemin = require("gulp-imagemin");
 const sourcemaps = require("gulp-sourcemaps");
 const browserSync = require("browser-sync").create();
 const reload = browserSync.reload;
@@ -44,10 +44,10 @@ function javaScript(done) {
 	done();
 }
 
-function convertImages(done) {
-	src(paths.img).pipe(imagemin()).pipe(dest(paths.imgDest));
-	done();
-}
+// function convertImages(done) {
+// 	src(paths.img).pipe(imagemin()).pipe(dest(paths.imgDest));
+// 	done();
+// }
 
 function startBrowserSync(done) {
 	browserSync.init({
@@ -64,9 +64,9 @@ function watchForChanges(done) {
 		"change",
 		reload
 	);
-	watch(paths.img, convertImages).on("change", reload);
+	// watch(paths.img, convertImages).on("change", reload);
 	done();
 }
 
-const mainFunctions = parallel(sassCompiler, javaScript, convertImages);
+const mainFunctions = parallel(sassCompiler, javaScript);
 exports.default = series(mainFunctions, startBrowserSync, watchForChanges);

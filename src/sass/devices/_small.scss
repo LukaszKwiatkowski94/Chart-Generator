@@ -1,42 +1,21 @@
 @media (min-width: 576px) {
-	.chart {
-		&__demo-btn,
-		&__create-btn {
-			cursor: pointer;
-		}
-		&__create-table {
-			flex-direction: row;
-			justify-content: flex-start;
-		}
-		&__create-table-item {
-			flex-direction: column;
-			justify-content: space-evenly;
-			margin: auto;
-			p {
-				margin: 1.6rem;
-				padding-bottom: 0;
-				font-weight: bold;
-				text-transform: uppercase;
-			}
-		}
-		&__create-label,
-		&__create-color,
-		&__create-value {
-			width: 100%;
-		}
-		input {
-			margin: 0.5em auto;
-			min-width: 3em;
-		}
-	}
-
-	.footer {
-		&__logo {
-			display: flex;
-			align-items: center;
-			font-size: 2.4rem;
-			text-transform: uppercase;
-			font-weight: bold;
-		}
-	}
+    .title {
+        font-size: 2.5rem;
+    }
+	.data {
+        &__list {
+            &-item {
+                &-buttons {
+                    margin: 10px auto;
+                    
+                    button {
+                        margin: 0 5px;
+                        padding: 10px 20px;
+                        font-size: 1.4rem;
+                        letter-spacing: 2px;
+                    }
+                }
+            }
+        }
+    }
 }

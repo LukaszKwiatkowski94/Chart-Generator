@@ -1,2 +1,32 @@
 @media (min-width: 768px) {
+    .container {
+        padding: 0 40px;
+    }
+    
+    .title {
+        font-size: 2.5rem;
+    }
+    
+    .data {
+        &__title {
+            font-size: 2rem;
+        }
+        
+        &__buttons {
+            button {
+                margin: 5px 20px;
+                padding: 15px 30px;
+            }
+        }
+
+        &__list {
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 20px;
+
+            &-item {
+                width: 280px;
+            }
+        }
+    }
 }
