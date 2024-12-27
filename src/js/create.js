@@ -22,7 +22,7 @@ $('#create__btn').click(() => {
         items.push(itemObject);
 
     // Prepare HTML for new item
-        prepareHTML_LoadedItems();
+        prepareHTML_ListItems();
 
     // Save items to local storage
         saveItems();
@@ -47,7 +47,7 @@ function loadItems() {
     try {
         if(localStorage.getItem('items')) {
             items = JSON.parse(localStorage.getItem('items'));
-            prepareHTML_LoadedItems();
+            prepareHTML_ListItems();
             // Reload chart
                 reloadChart();
         } else {
@@ -59,7 +59,7 @@ function loadItems() {
     }
 }
 
-function prepareHTML_LoadedItems() {
+function prepareHTML_ListItems() {
     try {
         list.html('');
 
@@ -150,7 +150,7 @@ function prepareHTML_LoadedItems() {
                 removeButton.addEventListener('click', () => {
                     items = items.filter(item => item.id !== idedntifier);
                     saveItems();
-                    prepareHTML_LoadedItems();
+                    prepareHTML_ListItems();
                 });
                 buttonsContainer.appendChild(removeButton);
 
@@ -166,7 +166,7 @@ function prepareHTML_LoadedItems() {
                         items[index - 1] = items[index];
                         items[index] = temp;
                         saveItems();
-                        prepareHTML_LoadedItems();
+                        prepareHTML_ListItems();
                     }
                 });
                 buttonsContainer.appendChild(upButton);
@@ -183,7 +183,7 @@ function prepareHTML_LoadedItems() {
                         items[index + 1] = items[index];
                         items[index] = temp;    
                         saveItems();
-                        prepareHTML_LoadedItems();
+                        prepareHTML_ListItems();
                     }
                 });
                 buttonsContainer.appendChild(downButton);
@@ -266,14 +266,14 @@ function prepareHTML_LoadedItems() {
     $('#asc__btn').click(() => {
         items.sort((a, b) => a.value - b.value);
         saveItems();
-        prepareHTML_LoadedItems();
+        prepareHTML_ListItems();
     });
 
 // Sort items by value descending
     $('#desc__btn').click(() => {
         items.sort((a, b) => b.value - a.value);
         saveItems();
-        prepareHTML_LoadedItems();
+        prepareHTML_ListItems();
     });
 
 // Download PNG
